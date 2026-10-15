@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="1000" height="620">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff5f5" />
+      <stop offset="100%" stop-color="#fee2e2" />
+    </linearGradient>
+    <linearGradient id="btnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e63946" />
+      <stop offset="100%" stop-color="#c1121f" />
+    </linearGradient>
+    <filter id="shadow3" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="620" fill="url(#bgGrad3)" rx="16" />
+
+  <!-- Window Container -->
+  <g transform="translate(40, 30)" filter="url(#shadow3)">
+    <!-- Window Frame -->
+    <rect width="920" height="560" rx="12" fill="#ffffff" />
+    
+    <!-- Window Titlebar -->
+    <path d="M 0 12 Q 0 0 12 0 L 908 0 Q 920 0 920 12 L 920 48 L 0 48 Z" fill="#0f172a" />
+    <circle cx="24" cy="24" r="6" fill="#ef4444" />
+    <circle cx="44" cy="24" r="6" fill="#f59e0b" />
+    <circle cx="64" cy="24" r="6" fill="#10b981" />
+    
+    <!-- Browser Address Bar -->
+    <rect x="180" y="10" width="560" height="28" rx="6" fill="#1e293b" />
+    <text x="375" y="29" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">🔒 https://lifelink.org — LifeLink Platform</text>
+
+    <!-- Top Navigation Header -->
+    <rect x="0" y="48" width="920" height="56" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+    <text x="30" y="84" fill="#e63946" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800">🩸 LifeLink</text>
+    
+    <!-- Navigation Links -->
+    <rect x="130" y="66" width="65" height="26" rx="13" fill="#fee2e2" />
+    <text x="145" y="83" fill="#e63946" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">Home</text>
+    <text x="215" y="82" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500">Blood Matching</text>
+    <text x="340" y="82" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500">Available Donors</text>
+    <text x="470" y="82" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500">Emergency Alerts</text>
+    <text x="600" y="82" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500">Compatibility</text>
+
+    <!-- Hero Section -->
+    <g transform="translate(40, 125)">
+      <!-- Badge -->
+      <rect x="0" y="0" width="270" height="24" rx="12" fill="#fee2e2" />
+      <text x="12" y="16" fill="#e63946" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700">⚡ HACKTOBERFEST LAHORE 2026</text>
+
+      <text x="0" y="60" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="800">Every Second Counts.</text>
+      <text x="0" y="95" fill="#e63946" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="800">Connect to Donors in Minutes.</text>
+      
+      <text x="0" y="130" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14">An intelligent emergency blood matching platform powered by open-weight Meta LLaMA 3.1 8B</text>
+      <text x="0" y="150" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14">and clinical erythrocyte compatibility matrices across Pakistani cities.</text>
+
+      <!-- CTA Buttons -->
+      <rect x="0" y="175" width="180" height="42" rx="8" fill="url(#btnGrad)" />
+      <text x="24" y="201" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">Find Blood Match →</text>
+
+      <rect x="195" y="175" width="165" height="42" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5" />
+      <text x="220" y="201" fill="#1e293b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">Browse Donors</text>
+
+      <!-- Live Statistics Cards -->
+      <g transform="translate(0, 245)">
+        <!-- Stat 1 -->
+        <rect x="0" y="0" width="195" height="110" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+        <text x="20" y="38" fill="#e63946" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800">12+</text>
+        <text x="20" y="62" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">Verified Donors</text>
+        <text x="20" y="82" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Lahore, Karachi, Isb</text>
+
+        <!-- Stat 2 -->
+        <rect x="215" y="0" width="195" height="110" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+        <text x="235" y="38" fill="#0284c7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800">&lt; 1s</text>
+        <text x="235" y="62" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">AI Match Latency</text>
+        <text x="235" y="82" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Groq LPU Acceleration</text>
+
+        <!-- Stat 3 -->
+        <rect x="430" y="0" width="195" height="110" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+        <text x="450" y="38" fill="#16a34a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800">100%</text>
+        <text x="450" y="62" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">Clinical Precision</text>
+        <text x="450" y="82" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">ABO / Rh Red Cell Matrix</text>
+
+        <!-- Stat 4 -->
+        <rect x="645" y="0" width="195" height="110" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+        <text x="665" y="38" fill="#d97706" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800">1-Click</text>
+        <text x="665" y="62" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">Emergency Dispatch</text>
+        <text x="665" y="82" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Phone &amp; WhatsApp</text>
+      </g>
+    </g>
+  </g>
+</svg>

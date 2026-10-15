@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="1000" height="620">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="primaryGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e63946" />
+      <stop offset="100%" stop-color="#c1121f" />
+    </linearGradient>
+    <filter id="shadow2" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="620" fill="url(#bgGrad2)" rx="16" />
+
+  <!-- Window Container -->
+  <g transform="translate(40, 30)" filter="url(#shadow2)">
+    <!-- Window Frame -->
+    <rect width="920" height="560" rx="12" fill="#f8fafc" />
+    
+    <!-- Window Titlebar -->
+    <path d="M 0 12 Q 0 0 12 0 L 908 0 Q 920 0 920 12 L 920 48 L 0 48 Z" fill="#0f172a" />
+    <circle cx="24" cy="24" r="6" fill="#ef4444" />
+    <circle cx="44" cy="24" r="6" fill="#f59e0b" />
+    <circle cx="64" cy="24" r="6" fill="#10b981" />
+    
+    <!-- Browser Address Bar -->
+    <rect x="180" y="10" width="560" height="28" rx="6" fill="#1e293b" />
+    <text x="350" y="29" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">🔒 https://lifelink.org/donors?blood=O-&amp;city=Lahore</text>
+
+    <!-- Top Navigation Header -->
+    <rect x="0" y="48" width="920" height="56" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+    <text x="30" y="84" fill="#e63946" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800">🩸 LifeLink</text>
+    
+    <!-- Navigation Links -->
+    <text x="140" y="82" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500">Home</text>
+    <text x="210" y="82" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500">Blood Matching</text>
+    <rect x="330" y="66" width="130" height="26" rx="13" fill="#fee2e2" />
+    <text x="342" y="83" fill="#e63946" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">Available Donors</text>
+    <text x="490" y="82" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500">Emergency Alerts</text>
+    <text x="620" y="82" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500">Compatibility</text>
+
+    <!-- Content Header -->
+    <g transform="translate(40, 120)">
+      <text x="0" y="24" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800">Verified Available Donors</text>
+      <text x="0" y="46" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">Filtered by: <tspan fill="#e63946" font-weight="700">Blood Group O-</tspan> · <tspan fill="#0f172a" font-weight="600">City: Lahore</tspan> (Showing verified volunteer donors ready for urgent dispatch)</text>
+
+      <!-- Active Filter Pills -->
+      <g transform="translate(0, 60)">
+        <rect x="0" y="0" width="100" height="28" rx="14" fill="#e63946" />
+        <text x="14" y="18" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">Type: O- ✕</text>
+
+        <rect x="110" y="0" width="115" height="28" rx="14" fill="#1d3557" />
+        <text x="124" y="18" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">Lahore, PK ✕</text>
+
+        <rect x="235" y="0" width="130" height="28" rx="14" fill="#dcfce7" stroke="#86efac" />
+        <text x="248" y="18" fill="#166534" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">● Available Now</text>
+
+        <text x="730" y="19" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">8 Donors Matched</text>
+      </g>
+
+      <!-- Donor Cards Grid -->
+      <g transform="translate(0, 105)">
+        <!-- Card 1 -->
+        <g transform="translate(0, 0)">
+          <rect width="405" height="135" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+          <circle cx="45" cy="45" r="24" fill="#fee2e2" />
+          <text x="34" y="52" fill="#e63946" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800">O-</text>
+
+          <text x="85" y="38" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Hamza Tariq</text>
+          <rect x="195" y="24" width="70" height="18" rx="9" fill="#dcfce7" />
+          <text x="204" y="37" fill="#15803d" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700">Available</text>
+
+          <text x="85" y="58" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">📍 Gulberg III, Lahore · 2.4 km away</text>
+          <text x="85" y="76" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Last donation: 4 months ago · 6 total donations</text>
+
+          <!-- Contact Buttons -->
+          <rect x="85" y="90" width="145" height="32" rx="6" fill="#0284c7" />
+          <text x="100" y="111" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">📞 Call: +92 300 45...</text>
+
+          <rect x="240" y="90" width="145" height="32" rx="6" fill="#22c55e" />
+          <text x="260" y="111" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">💬 WhatsApp</text>
+        </g>
+
+        <!-- Card 2 -->
+        <g transform="translate(435, 0)">
+          <rect width="405" height="135" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+          <circle cx="45" cy="45" r="24" fill="#fee2e2" />
+          <text x="34" y="52" fill="#e63946" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800">O-</text>
+
+          <text x="85" y="38" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Bilal Rehman</text>
+          <rect x="195" y="24" width="70" height="18" rx="9" fill="#dcfce7" />
+          <text x="204" y="37" fill="#15803d" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700">Available</text>
+
+          <text x="85" y="58" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">📍 Johar Town, Lahore · 4.8 km away</text>
+          <text x="85" y="76" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Last donation: 5 months ago · 3 total donations</text>
+
+          <!-- Contact Buttons -->
+          <rect x="85" y="90" width="145" height="32" rx="6" fill="#0284c7" />
+          <text x="100" y="111" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">📞 Call: +92 321 88...</text>
+
+          <rect x="240" y="90" width="145" height="32" rx="6" fill="#22c55e" />
+          <text x="260" y="111" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">💬 WhatsApp</text>
+        </g>
+
+        <!-- Card 3 -->
+        <g transform="translate(0, 150)">
+          <rect width="405" height="135" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+          <circle cx="45" cy="45" r="24" fill="#fee2e2" />
+          <text x="34" y="52" fill="#e63946" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800">O-</text>
+
+          <text x="85" y="38" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Usman Farooq</text>
+          <rect x="205" y="24" width="70" height="18" rx="9" fill="#dcfce7" />
+          <text x="214" y="37" fill="#15803d" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700">Available</text>
+
+          <text x="85" y="58" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">📍 Model Town, Lahore · 3.1 km away</text>
+          <text x="85" y="76" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Last donation: 6 months ago · 8 total donations</text>
+
+          <!-- Contact Buttons -->
+          <rect x="85" y="90" width="145" height="32" rx="6" fill="#0284c7" />
+          <text x="100" y="111" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">📞 Call: +92 333 91...</text>
+
+          <rect x="240" y="90" width="145" height="32" rx="6" fill="#22c55e" />
+          <text x="260" y="111" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">💬 WhatsApp</text>
+        </g>
+
+        <!-- Card 4 -->
+        <g transform="translate(435, 150)">
+          <rect width="405" height="135" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+          <circle cx="45" cy="45" r="24" fill="#fee2e2" />
+          <text x="34" y="52" fill="#e63946" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800">O-</text>
+
+          <text x="85" y="38" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Zainab Malik</text>
+          <rect x="195" y="24" width="70" height="18" rx="9" fill="#dcfce7" />
+          <text x="204" y="37" fill="#15803d" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700">Available</text>
+
+          <text x="85" y="58" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">📍 Shadman, Lahore · 1.2 km away</text>
+          <text x="85" y="76" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Last donation: 7 months ago · 4 total donations</text>
+
+          <!-- Contact Buttons -->
+          <rect x="85" y="90" width="145" height="32" rx="6" fill="#0284c7" />
+          <text x="100" y="111" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">📞 Call: +92 345 12...</text>
+
+          <rect x="240" y="90" width="145" height="32" rx="6" fill="#22c55e" />
+          <text x="260" y="111" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">💬 WhatsApp</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
