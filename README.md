@@ -32,6 +32,26 @@ Below are visual previews of the key workflows in LifeLink:
 
 ---
 
+## ℹ️ About LifeLink
+
+### 🎯 Mission & Vision
+**LifeLink** is an open-source, emergency blood donor matching platform engineered specifically for **Hacktoberfest Lahore 2026**. Its central mission is to eliminate fatal communication friction and time delays when hospital patients desperately need emergency blood transfusions across Pakistan.
+
+In high-stress medical emergencies—such as road traffic accidents, emergency cesarean sections, oncology procedures, or pediatric thalassemia transfusions—hospital blood inventories can quickly run out of specific units. Families are typically left scrambling: making frantic phone calls, sending unverified messages across WhatsApp groups, and waiting helplessly while valuable minutes tick away.
+
+LifeLink reimagines this experience by providing an instant, 3-step pipeline:
+1. **Intelligent Natural Language Triage:** Relatives and medical staff describe the emergency in plain, conversational English or Roman Urdu without filling out complicated forms.
+2. **Clinical Erythrocyte Matching:** The platform applies medical ABO and Rh(D) compatibility rules, ensuring compatible universal donors (like O-) are instantly surfaced alongside exact type matches.
+3. **Frictionless Direct Outreach:** Attendants can connect immediately with nearby, verified volunteer donors via 1-click Phone Call and pre-formatted WhatsApp coordination.
+
+### 🛡️ Core Values & Design Principles
+- **Clinical Integrity First:** Blood matching follows strict red blood cell transfusion science, not mere string matching.
+- **Accessible to Everyone:** Optimized for lightweight mobile devices and low-bandwidth connections, featuring zero heavy frameworks or slow build steps.
+- **Ethical & Open AI:** Uses verifiable, open-weight artificial intelligence (Meta LLaMA 3.1 8B) under the 8B parameter threshold, keeping the technology transparent, democratized, and reproducible.
+- **Privacy & Safety Conscious:** Volunteer donors maintain control over their availability status, and patient appeals can be posted without exposing sensitive private health records.
+
+---
+
 ## 💡 The Core Problem & Solution
 
 ### 🏥 The Real-World Emergency
