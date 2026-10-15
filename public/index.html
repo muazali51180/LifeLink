@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LifeLink | Emergency Blood Donor Matching Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/">
+        <span class="logo-icon">🩸</span>
+        <span class="brand-text">LifeLink</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="/" class="nav-item active">Home</a>
+        <a href="/search" class="nav-item">Blood Matching</a>
+        <a href="/donors" class="nav-item">Available Donors</a>
+        <a href="/emergency" class="nav-item">Emergency Alerts</a>
+        <a href="/register-donor" class="nav-item">Become a Donor</a>
+        <a href="/compatibility" class="nav-item">Blood Chart</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="engine-badge" title="Matching System">
+          <span class="pulse-dot"></span>
+          <span id="engineLabel">System Ready</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Notice Banner -->
+  <div class="demo-banner">
+    <div class="demo-banner-content">
+      <span>💡 <strong>Hacktoberfest Lahore 2026:</strong> Emergency blood donor matching platform for patients and hospitals across Pakistan.</span>
+      <div class="demo-quick-actions">
+        <a href="/search" class="pill-btn">🔍 Blood Matching</a>
+        <a href="/donors" class="pill-btn">🩸 Available Donors</a>
+        <a href="/emergency" class="pill-btn">🚨 Urgent Requests</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="badge-tag">
+          <span class="badge-icon">⚡</span> FAST EMERGENCY BLOOD MATCHING
+        </div>
+        <h1>When Hospital Patients Need Blood,<br><span class="highlight">Matching Donors is Instant.</span></h1>
+        <p class="hero-lead">
+          When emergency blood is needed for critical surgeries, trauma, or thalassemia patients, LifeLink interprets natural language requests, applies clinical compatibility rules, and matches verified nearby donors ready to help.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary btn-lg" href="/search">
+            <span>🔍 Start Blood Matching</span>
+          </a>
+          <a class="btn btn-emergency btn-lg" href="/emergency">
+            <span>🚨 Post Urgent Appeal</span>
+          </a>
+          <a class="btn btn-secondary btn-lg" href="/register-donor">
+            <span>🩸 Register as Donor</span>
+          </a>
+        </div>
+
+        <!-- Live Platform Counters -->
+        <div class="hero-stats">
+          <div class="stat-pill">
+            <strong id="statTotalDonors">12+</strong>
+            <span>Registered Donors</span>
+          </div>
+          <div class="stat-pill">
+            <strong id="statAvailableDonors" class="text-green">10+</strong>
+            <span>Available Right Now</span>
+          </div>
+          <div class="stat-pill">
+            <strong id="statEmergencies" class="text-red">3</strong>
+            <span>Active Hospital Appeals</span>
+          </div>
+          <div class="stat-pill">
+            <strong>&lt; 1 sec</strong>
+            <span>Match Speed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="matching-card-preview">
+          <div class="preview-header">
+            <span class="preview-dot green"></span>
+            <span class="preview-dot yellow"></span>
+            <span class="preview-dot red"></span>
+            <span class="preview-title">Hospital Blood Matching Flow</span>
+          </div>
+          <div class="preview-body">
+            <div class="request-bubble">
+              <span class="bubble-tag">Patient in Hospital</span>
+              <p>“Need O+ blood urgently at Services Hospital Lahore”</p>
+            </div>
+            <div class="ai-arrow">
+              <span>⚡ Clinical Compatibility Matching</span>
+              <div class="pulse-line"></div>
+            </div>
+            <div class="matched-donor-bubble">
+              <div class="donor-mini-avatar">🩸</div>
+              <div class="donor-mini-info">
+                <strong>Muhammad Usman (O+)</strong>
+                <p>Gulberg, Lahore · 2.4 km away · 🟢 Available</p>
+              </div>
+              <span class="match-badge">Direct Contact Ready</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Hub (Feature Cards) -->
+    <section class="section" style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-badge">PLATFORM SECTIONS</span>
+          <h2>Select a LifeLink Service</h2>
+          <p>Choose the service you need right now:</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(270px, 1fr)); gap:24px; margin-top:20px;">
+          <!-- Card 1 -->
+          <div class="panel" style="display:flex; flex-direction:column; justify-content:space-between; gap:16px;">
+            <div>
+              <div style="font-size:2.2rem; margin-bottom:12px;">🔍</div>
+              <h3 style="font-size:1.25rem; font-weight:800; margin-bottom:8px;">Blood Matching</h3>
+              <p style="color:var(--ink-secondary); font-size:0.92rem;">
+                State your request in plain words. The matching engine identifies required blood types, hospitals, and location, then directs you to matched donors.
+              </p>
+            </div>
+            <a href="/search" class="btn btn-primary" style="width:100%;">Start Blood Matching &rarr;</a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="panel" style="display:flex; flex-direction:column; justify-content:space-between; gap:16px;">
+            <div>
+              <div style="font-size:2.2rem; margin-bottom:12px;">👥</div>
+              <h3 style="font-size:1.25rem; font-weight:800; margin-bottom:8px;">Available Donors</h3>
+              <p style="color:var(--ink-secondary); font-size:0.92rem;">
+                Browse the complete volunteer donor directory with city and blood group filters, and connect directly via Phone or WhatsApp.
+              </p>
+            </div>
+            <a href="/donors" class="btn btn-secondary" style="width:100%;">View All Donors &rarr;</a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="panel" style="display:flex; flex-direction:column; justify-content:space-between; gap:16px; border-color:#fecaca; background:#fffafa;">
+            <div>
+              <div style="font-size:2.2rem; margin-bottom:12px;">🚨</div>
+              <h3 style="font-size:1.25rem; font-weight:800; margin-bottom:8px; color:#b91c1c;">Hospital Emergency Appeals</h3>
+              <p style="color:var(--ink-secondary); font-size:0.92rem;">
+                Browse live appeals for patients admitted in critical hospital care, or broadcast an urgent request for your patient.
+              </p>
+            </div>
+            <a href="/emergency" class="btn btn-emergency" style="width:100%;">View Emergency Appeals &rarr;</a>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="panel" style="display:flex; flex-direction:column; justify-content:space-between; gap:16px;">
+            <div>
+              <div style="font-size:2.2rem; margin-bottom:12px;">🩺</div>
+              <h3 style="font-size:1.25rem; font-weight:800; margin-bottom:8px;">Blood Compatibility</h3>
+              <p style="color:var(--ink-secondary); font-size:0.92rem;">
+                Learn which blood types are compatible for safe red blood cell transfusion, and check universal donor (O-) rules.
+              </p>
+            </div>
+            <a href="/compatibility" class="btn btn-outline" style="width:100%;">View Compatibility Chart &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-badge">WORKFLOW</span>
+          <h2>How LifeLink Works</h2>
+          <p>A fast, 3-step bridge between patients and volunteer donors:</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px;">
+          <div class="panel" style="text-align:center; padding:32px 24px;">
+            <div style="width:54px; height:54px; border-radius:50%; background:var(--primary-light); color:var(--primary); font-size:1.5rem; font-weight:850; display:grid; place-items:center; margin:0 auto 16px;">1</div>
+            <h3 style="font-size:1.15rem; font-weight:800; margin-bottom:8px;">Describe Your Need</h3>
+            <p style="color:var(--ink-secondary); font-size:0.9rem;">
+              Type naturally in the search box, for example: <em>"Need 2 units of O+ blood in Lahore right now"</em>.
+            </p>
+          </div>
+
+          <div class="panel" style="text-align:center; padding:32px 24px;">
+            <div style="width:54px; height:54px; border-radius:50%; background:var(--primary-light); color:var(--primary); font-size:1.5rem; font-weight:850; display:grid; place-items:center; margin:0 auto 16px;">2</div>
+            <h3 style="font-size:1.15rem; font-weight:800; margin-bottom:8px;">Clinical Compatibility Match</h3>
+            <p style="color:var(--ink-secondary); font-size:0.9rem;">
+              The matching engine identifies both exact matches and compatible donor types (such as O- universal donors).
+            </p>
+          </div>
+
+          <div class="panel" style="text-align:center; padding:32px 24px;">
+            <div style="width:54px; height:54px; border-radius:50%; background:var(--primary-light); color:var(--primary); font-size:1.5rem; font-weight:850; display:grid; place-items:center; margin:0 auto 16px;">3</div>
+            <h3 style="font-size:1.15rem; font-weight:800; margin-bottom:8px;">Direct Contact (Call/WhatsApp)</h3>
+            <p style="color:var(--ink-secondary); font-size:0.9rem;">
+              Navigate to matched donors and instantly dial or send a pre-filled WhatsApp message to arrange donation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Medical Disclaimer -->
+    <section class="disclaimer-section">
+      <div class="section-container">
+        <div class="disclaimer-box">
+          <div class="disclaimer-icon">⚠️</div>
+          <div class="disclaimer-text">
+            <strong>Important Medical & Emergency Notice:</strong>
+            <p>
+              LifeLink is a prototype for Hacktoberfest Lahore 2026. It facilitates peer-to-peer connection with volunteer blood donors. It does not replace 1122 or hospital emergency blood banks. Always perform proper laboratory cross-matching, screening, and consult certified medical doctors before transfusion.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <strong>LifeLink</strong>
+        <p>Emergency Blood Donor Matching Platform · Hacktoberfest Lahore 2026</p>
+      </div>
+      <div class="footer-right">
+        <span>Fast Clinical Compatibility Matching</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    fetch('/api/health').then(r => r.json()).then(data => {
+      if (data.ok) {
+        if (document.getElementById('statTotalDonors')) document.getElementById('statTotalDonors').textContent = `${data.totalDemoDonors}+`;
+        if (document.getElementById('statEmergencies')) document.getElementById('statEmergencies').textContent = data.activeEmergencies;
+        if (document.getElementById('engineLabel')) document.getElementById('engineLabel').textContent = data.aiConfigured ? 'Groq Engine Active' : 'System Ready';
+      }
+    }).catch(() => {});
+  </script>
+</body>
+</html>

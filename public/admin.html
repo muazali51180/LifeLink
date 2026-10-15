@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Control Center | LifeLink AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/">
+        <span class="logo-icon">🩸</span>
+        <div class="brand-text">
+          <span>LifeLink</span>
+          <span class="brand-badge">AI</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="/" class="nav-item">Home</a>
+        <a href="/search" class="nav-item">AI Matching</a>
+        <a href="/emergency" class="nav-item">Emergency Alerts</a>
+        <a href="/register-donor" class="nav-item">Become a Donor</a>
+        <a href="/compatibility" class="nav-item">Blood Chart</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="/login" class="btn btn-sm btn-outline">Account</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top:40px;">
+      <div class="section-container">
+        
+        <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;">
+          <div>
+            <span class="section-badge badge-admin">SUPERVISOR CONTROL</span>
+            <h2>Platform Management Dashboard</h2>
+            <p>Moderate and manage community volunteer donor profiles and hospital emergency blood appeals.</p>
+          </div>
+          <div>
+            <button id="adminRefreshBtn" class="btn btn-primary">🔄 Refresh Records</button>
+          </div>
+        </div>
+
+        <!-- Live Platform Stats Cards -->
+        <div class="hero-stats" style="margin-bottom:30px; border-top:none; padding-top:0;">
+          <div class="stat-pill">
+            <strong id="adminStatDonors">—</strong>
+            <span>Total Donors</span>
+          </div>
+          <div class="stat-pill">
+            <strong id="adminStatAvailable" class="text-green">—</strong>
+            <span>Available Donors</span>
+          </div>
+          <div class="stat-pill">
+            <strong id="adminStatEmergencies" class="text-red">—</strong>
+            <span>Active Emergencies</span>
+          </div>
+          <div class="stat-pill">
+            <strong id="adminStatUniversal">—</strong>
+            <span>Universal Donors (O-)</span>
+          </div>
+        </div>
+
+        <!-- Management Tables Grid -->
+        <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:32px; align-items:start;">
+          
+          <!-- Donors Table Panel -->
+          <div class="panel" style="padding:24px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--border);">
+              <h3 style="font-size:1.15rem; font-weight:800;">🩸 Registered Donors</h3>
+              <span id="donorsCountTag" class="tag" style="background:#f1f5f9;">Loading...</span>
+            </div>
+            <div id="adminDonorsList" style="display:flex; flex-direction:column; gap:12px; max-height:550px; overflow-y:auto;">
+              Loading donors...
+            </div>
+          </div>
+
+          <!-- Emergency Appeals Panel -->
+          <div class="panel" style="padding:24px; border-color:#fecaca; background:#fffafa;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid #fecaca;">
+              <h3 style="font-size:1.15rem; font-weight:800; color:#991b1b;">🚨 Hospital Emergency Appeals</h3>
+              <span id="emgCountTag" class="tag" style="background:#fee2e2; color:#b91c1c;">Loading...</span>
+            </div>
+            <div id="adminEmergenciesList" style="display:flex; flex-direction:column; gap:12px; max-height:550px; overflow-y:auto;">
+              Loading emergency requests...
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <strong>LifeLink AI</strong> · Administration Control Center
+      </div>
+      <div class="footer-right">
+        <span>Hacktoberfest Lahore 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    function escapeHtml(val) {
+      return String(val || '').replace(/[&<>"']/g, c => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[c]));
+    }
+
+    function toast(msg) {
+      const el = document.getElementById('toast');
+      if (!el) return;
+      el.textContent = msg;
+      el.classList.add('show');
+      setTimeout(() => el.classList.remove('show'), 3500);
+    }
+
+    async function loadAdminData() {
+      try {
+        const statsRes = await fetch('/api/stats');
+        const stats = await statsRes.json();
+        document.getElementById('adminStatDonors').textContent = stats.totalDonors;
+        document.getElementById('adminStatAvailable').textContent = stats.availableDonors;
+        document.getElementById('adminStatEmergencies').textContent = stats.activeEmergencies;
+        document.getElementById('adminStatUniversal').textContent = stats.universalDonors;
+
+        const donorRes = await fetch('/api/donors');
+        const donorData = await donorRes.json();
+        const donors = donorData.donors || [];
+        document.getElementById('donorsCountTag').textContent = `${donors.length} Profiles`;
+
+        document.getElementById('adminDonorsList').innerHTML = donors.map(d => `
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 12px; border:1px solid #e2e8f0; border-radius:10px; background:#fff;">
+            <div>
+              <strong>${escapeHtml(d.name)} <span style="color:#dc2626;">[${escapeHtml(d.bloodGroup)}]</span></strong>
+              <p style="font-size:0.8rem; color:#64748b; margin-top:2px;">📍 ${escapeHtml(d.city)} · 📞 ${escapeHtml(d.phone || 'N/A')}</p>
+            </div>
+            <button class="btn btn-sm btn-outline" style="color:#b91c1c; border-color:#fecaca;" onclick="deleteDonor('${d.id}')">Delete</button>
+          </div>
+        `).join('');
+
+        const emgRes = await fetch('/api/emergencies');
+        const emgData = await emgRes.json();
+        const emergencies = emgData.emergencies || [];
+        document.getElementById('emgCountTag').textContent = `${emergencies.length} Active`;
+
+        document.getElementById('adminEmergenciesList').innerHTML = emergencies.map(e => `
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 12px; border:1px solid #fecaca; border-radius:10px; background:#fff;">
+            <div>
+              <strong>${escapeHtml(e.patientName)} <span style="color:#dc2626;">[${escapeHtml(e.bloodGroup)}]</span></strong>
+              <p style="font-size:0.8rem; color:#64748b; margin-top:2px;">🏥 ${escapeHtml(e.hospital)}, ${escapeHtml(e.city)}</p>
+            </div>
+            <button class="btn btn-sm btn-emergency" onclick="deleteEmergency('${e.id}')">Resolve</button>
+          </div>
+        `).join('');
+
+      } catch (err) {
+        console.error('Admin data load error:', err);
+      }
+    }
+
+    window.deleteDonor = async function(id) {
+      if (!confirm('Are you sure you want to remove this donor profile?')) return;
+      try {
+        const res = await fetch(`/api/donors/${id}`, {
+          method: 'DELETE',
+          headers: { 'Authorization': 'Bearer demo-token-admin' }
+        });
+        if (res.ok) {
+          toast('Donor profile removed.');
+          await loadAdminData();
+        }
+      } catch (err) {
+        alert('Delete failed');
+      }
+    };
+
+    window.deleteEmergency = async function(id) {
+      if (!confirm('Mark this hospital emergency request as resolved?')) return;
+      try {
+        const res = await fetch(`/api/emergencies/${id}`, {
+          method: 'DELETE',
+          headers: { 'Authorization': 'Bearer demo-token-admin' }
+        });
+        if (res.ok) {
+          toast('Emergency request resolved.');
+          await loadAdminData();
+        }
+      } catch (err) {
+        alert('Action failed');
+      }
+    };
+
+    document.getElementById('adminRefreshBtn').addEventListener('click', loadAdminData);
+    window.addEventListener('DOMContentLoaded', loadAdminData);
+  </script>
+</body>
+</html>

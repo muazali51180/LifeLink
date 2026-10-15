@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Become a Blood Donor | LifeLink AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/">
+        <span class="logo-icon">🩸</span>
+        <span class="brand-text">LifeLink</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="/" class="nav-item">Home</a>
+        <a href="/search" class="nav-item">Blood Matching</a>
+        <a href="/donors" class="nav-item">Available Donors</a>
+        <a href="/emergency" class="nav-item">Emergency Alerts</a>
+        <a href="/register-donor" class="nav-item active">Become a Donor</a>
+        <a href="/compatibility" class="nav-item">Blood Chart</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="engine-badge" title="Donor Portal">
+          <span class="pulse-dot"></span>
+          <span>Donor Network</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top:40px;">
+      <div class="section-container">
+        
+        <div class="section-header text-center">
+          <span class="section-badge">SAVE LIVES</span>
+          <h2>Register as a Volunteer Blood Donor</h2>
+          <p>Every donation can save up to 3 lives. Register your details so patients and hospitals in your city can connect with you during urgent emergencies.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1.35fr 0.95fr; gap:36px; max-width:1050px; margin:0 auto; align-items:start;">
+          
+          <!-- Registration Form -->
+          <div class="form-container" style="max-width:100%; padding:32px;">
+            <form id="donorRegisterForm" class="donor-reg-form">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="regName">Full Name *</label>
+                  <input id="regName" required maxlength="80" placeholder="e.g. Muhammad Usman" />
+                </div>
+                <div class="form-field">
+                  <label for="regPhone">Contact Phone / WhatsApp *</label>
+                  <input id="regPhone" required maxlength="25" placeholder="e.g. +92 300 1234567" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="regCity">City *</label>
+                  <input id="regCity" required maxlength="60" placeholder="e.g. Lahore, Karachi, Islamabad" />
+                </div>
+                <div class="form-field">
+                  <label for="regArea">Area / Sector / Colony</label>
+                  <input id="regArea" maxlength="80" placeholder="e.g. Gulberg III, Johar Town, DHA" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="regBlood">Blood Group *</label>
+                  <select id="regBlood" required>
+                    <option value="">Select Blood Group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O- (Universal Donor)</option>
+                  </select>
+                </div>
+
+                <div class="form-field">
+                  <label for="regAvailable">Current Availability *</label>
+                  <select id="regAvailable" required>
+                    <option value="yes" selected>🟢 Available to donate immediately</option>
+                    <option value="no">⚪ Not available right now (recently donated/busy)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="consent-box">
+                <label class="checkbox-label">
+                  <input id="regConsent" type="checkbox" required />
+                  <span>
+                    I confirm that my name, city, blood group, and contact phone number can be displayed to authenticated hospital attendants and seekers in need of emergency blood.
+                  </span>
+                </label>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">
+                  <span>Complete Donor Registration</span>
+                </button>
+              </div>
+
+              <p id="regStatus" class="form-status"></p>
+            </form>
+          </div>
+
+          <!-- Donor Eligibility & Guidelines Sidebar -->
+          <div style="display:flex; flex-direction:column; gap:20px;">
+            <div class="panel" style="padding:24px;">
+              <h3 style="font-size:1.15rem; font-weight:800; margin-bottom:12px; color:var(--primary);">
+                🩺 Donor Eligibility Guidelines
+              </h3>
+              <ul style="padding-left:20px; font-size:0.9rem; color:var(--ink-secondary); display:flex; flex-direction:column; gap:8px;">
+                <li><strong>Age:</strong> Must be between 18 and 60 years old.</li>
+                <li><strong>Weight:</strong> Minimum weight of 50 kg (110 lbs).</li>
+                <li><strong>Donation Interval:</strong> At least 3 months (90 days) since your last blood donation.</li>
+                <li><strong>Health Status:</strong> No history of active blood-borne viral infections (Hepatitis B/C, HIV).</li>
+                <li><strong>Screening:</strong> Hospital blood banks always perform cross-matching and hemoglobin screening before draw.</li>
+              </ul>
+            </div>
+
+            <div class="panel" style="padding:24px; background:#eff6ff; border-color:#bfdbfe;">
+              <h3 style="font-size:1.15rem; font-weight:800; margin-bottom:8px; color:#1e40af;">
+                🔒 Privacy & Security
+              </h3>
+              <p style="font-size:0.86rem; color:#1e3a8a; line-height:1.5;">
+                Your information is used solely for legitimate medical blood search requests. You can update your availability status or remove your profile at any time.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <strong>LifeLink AI</strong> · Emergency Blood Matching Platform
+      </div>
+      <div class="footer-right">
+        <span>Hacktoberfest Lahore 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    document.getElementById('donorRegisterForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const statusEl = document.getElementById('regStatus');
+      statusEl.className = 'form-status';
+      statusEl.textContent = 'Saving donor profile...';
+
+      const payload = {
+        name: document.getElementById('regName').value.trim(),
+        phone: document.getElementById('regPhone').value.trim(),
+        city: document.getElementById('regCity').value.trim(),
+        area: document.getElementById('regArea').value.trim(),
+        bloodGroup: document.getElementById('regBlood').value,
+        available: document.getElementById('regAvailable').value === 'yes',
+        consent: document.getElementById('regConsent').checked
+      };
+
+      try {
+        const res = await fetch('/api/donors', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Failed to save profile');
+
+        statusEl.className = 'form-status success';
+        statusEl.textContent = '✅ Congratulations! Your donor profile has been registered successfully.';
+        document.getElementById('donorRegisterForm').reset();
+      } catch (err) {
+        statusEl.className = 'form-status error';
+        statusEl.textContent = err.message || 'Error saving donor profile.';
+      }
+    });
+  </script>
+</body>
+</html>

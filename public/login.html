@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account & Authentication | LifeLink AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/">
+        <span class="logo-icon">🩸</span>
+        <div class="brand-text">
+          <span>LifeLink</span>
+          <span class="brand-badge">AI</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="/" class="nav-item">Home</a>
+        <a href="/search" class="nav-item">AI Matching</a>
+        <a href="/emergency" class="nav-item">Emergency Alerts</a>
+        <a href="/register-donor" class="nav-item">Become a Donor</a>
+        <a href="/compatibility" class="nav-item">Blood Chart</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="/admin" id="navAdminBtn" class="btn btn-sm btn-outline hidden">🛡️ Admin Dashboard</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top:40px;">
+      <div class="section-container" style="max-width:550px;">
+        
+        <div class="section-header text-center">
+          <span class="section-badge">USER PORTAL</span>
+          <h2>Account & Authentication</h2>
+          <p>Sign in or create your account using Firebase Authentication.</p>
+        </div>
+
+        <!-- Logged in state box -->
+        <div id="profileBox" class="panel hidden" style="background:#f0fdf4; border:1px solid #bbf7d0; padding:28px; text-align:center; margin-bottom:24px;">
+          <div style="font-size:2.5rem; margin-bottom:10px;">👤</div>
+          <h3 id="profileName" style="font-size:1.3rem; font-weight:800; color:var(--ink);">User Name</h3>
+          <p id="profileEmail" style="color:var(--ink-secondary); font-size:0.95rem; margin-bottom:12px;">user@example.com</p>
+          <span id="profileRoleBadge" class="tag" style="background:#dcfce7; color:#166534; font-size:0.8rem; margin-bottom:20px;">Role: Verified User</span>
+          
+          <div style="display:flex; justify-content:center; gap:12px; margin-top:20px;">
+            <a href="/search" class="btn btn-primary">Find Donors</a>
+            <button id="pageLogoutBtn" class="btn btn-outline" style="color:#b91c1c;">Sign Out</button>
+          </div>
+        </div>
+
+        <!-- Auth Forms Container -->
+        <div id="authFormsContainer" class="panel" style="padding:0; overflow:hidden; border:1px solid var(--border);">
+          <!-- Tabs -->
+          <div style="display:flex; border-bottom:1px solid var(--border); background:#f8fafc;">
+            <button id="loginTabBtn" type="button" style="flex:1; padding:14px; font-weight:800; border:none; background:none; cursor:pointer; border-bottom:3px solid var(--primary); color:var(--primary);">
+              Log In
+            </button>
+            <button id="signupTabBtn" type="button" style="flex:1; padding:14px; font-weight:800; border:none; background:none; cursor:pointer; color:var(--ink-muted);">
+              Create Account
+            </button>
+          </div>
+
+          <!-- Log In Form -->
+          <form id="pageLoginForm" style="padding:28px; display:flex; flex-direction:column; gap:16px;">
+            <div class="form-field">
+              <label for="loginEmail">Email Address</label>
+              <input id="loginEmail" type="email" required placeholder="you@example.com" autocomplete="email" />
+            </div>
+            <div class="form-field">
+              <label for="loginPassword">Password</label>
+              <input id="loginPassword" type="password" required placeholder="Your password" autocomplete="current-password" />
+            </div>
+
+            <p id="loginStatus" class="form-status" style="font-size:0.85rem;"></p>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">
+              Log In
+            </button>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+              <button id="forgotPassBtn" type="button" class="btn btn-sm btn-outline" style="border:none; color:var(--primary); padding:0;">Forgot Password?</button>
+              <span style="font-size:0.8rem; color:var(--ink-muted);">Firebase Project: lifelink-ee0a0</span>
+            </div>
+          </form>
+
+          <!-- Create Account Form -->
+          <form id="pageSignupForm" class="hidden" style="padding:28px; display:flex; flex-direction:column; gap:16px;">
+            <div class="form-field">
+              <label for="signupName">Full Name</label>
+              <input id="signupName" type="text" required placeholder="e.g. Usman Ali" autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="signupEmail">Email Address</label>
+              <input id="signupEmail" type="email" required placeholder="you@example.com" autocomplete="email" />
+            </div>
+            <div class="form-field">
+              <label for="signupPassword">Password (Min 6 characters)</label>
+              <input id="signupPassword" type="password" required minlength="6" placeholder="Choose a secure password" autocomplete="new-password" />
+            </div>
+
+            <p id="signupStatus" class="form-status" style="font-size:0.85rem;"></p>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">
+              Create Account
+            </button>
+          </form>
+        </div>
+
+        <!-- Quick Demo Switcher -->
+        <div class="panel" style="margin-top:24px; padding:20px; background:#f8fafc; text-align:center;">
+          <span style="font-size:0.82rem; font-weight:700; color:var(--ink-muted); display:block; margin-bottom:12px;">QUICK DEMO ACCOUNTS (ONE-CLICK LOGIN)</span>
+          <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+            <button id="demoSeekerBtn" class="pill-btn" style="background:#fff; color:var(--ink); border-color:var(--border);">⚡ Login as Demo Seeker</button>
+            <button id="demoAdminBtn" class="pill-btn" style="background:#fee2e2; color:#b91c1c; border-color:#fecaca;">🛡️ Login as Admin</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <strong>LifeLink AI</strong> · Emergency Blood Matching Platform
+      </div>
+      <div class="footer-right">
+        <span>Firebase Auth · Hacktoberfest Lahore 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="/js/login-page.js"></script>
+</body>
+</html>

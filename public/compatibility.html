@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blood Compatibility Guide | LifeLink AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/">
+        <span class="logo-icon">🩸</span>
+        <span class="brand-text">LifeLink</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="/" class="nav-item">Home</a>
+        <a href="/search" class="nav-item">Blood Matching</a>
+        <a href="/donors" class="nav-item">Available Donors</a>
+        <a href="/emergency" class="nav-item">Emergency Alerts</a>
+        <a href="/register-donor" class="nav-item">Become a Donor</a>
+        <a href="/compatibility" class="nav-item active">Blood Chart</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="engine-badge" title="Clinical Guide">
+          <span class="pulse-dot"></span>
+          <span>Clinical Matrix</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top:40px;">
+      <div class="section-container">
+        
+        <div class="section-header text-center">
+          <span class="section-badge">CLINICAL REFERENCE</span>
+          <h2>Blood Group Compatibility Guide</h2>
+          <p>Understand which blood groups can safely donate to each recipient. Our AI matching backend enforces this exact scientific compatibility matrix.</p>
+        </div>
+
+        <!-- Interactive Compatibility Calculator -->
+        <div class="panel" style="max-width:850px; margin:0 auto 40px; padding:32px; background:#fff; border:2px solid var(--primary-border);">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:20px;">
+            <div>
+              <h3 style="font-size:1.25rem; font-weight:800; color:var(--ink);">⚡ Interactive Compatibility Calculator</h3>
+              <p style="font-size:0.88rem; color:var(--ink-secondary);">Select the patient's blood group to see all compatible donors and recipient groups:</p>
+            </div>
+            <div>
+              <select id="calcBloodSelect" style="padding:10px 16px; font-size:1.1rem; font-weight:800; border-radius:10px; border:2px solid var(--primary); color:var(--primary); background:#fff; cursor:pointer;">
+                <option value="O+">O Positive (O+)</option>
+                <option value="O-">O Negative (O-)</option>
+                <option value="A+">A Positive (A+)</option>
+                <option value="A-">A Negative (A-)</option>
+                <option value="B+">B Positive (B+)</option>
+                <option value="B-">B Negative (B-)</option>
+                <option value="AB+">AB Positive (AB+)</option>
+                <option value="AB-">AB Negative (AB-)</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="calcResultsCard" style="background:#f8fafc; border:1px solid var(--border); border-radius:14px; padding:24px;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+              <div>
+                <span style="font-size:0.75rem; font-weight:800; text-transform:uppercase; color:var(--ink-muted);">Compatible Donors (Can Receive From):</span>
+                <div id="calcCanReceive" style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap;"></div>
+              </div>
+              <div>
+                <span style="font-size:0.75rem; font-weight:800; text-transform:uppercase; color:var(--ink-muted);">Can Donate Red Blood Cells To (Recipients):</span>
+                <div id="calcCanGive" style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap;"></div>
+              </div>
+            </div>
+
+            <div id="calcSpecialNote" style="margin-top:18px; padding-top:14px; border-top:1px solid var(--border); font-size:0.9rem; font-weight:600; color:#1e40af;"></div>
+
+            <div style="margin-top:20px; text-align:right;">
+              <a id="calcFindDonorsBtn" href="/search" class="btn btn-primary">
+                🔍 Find Donors for This Group &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full Standard Table -->
+        <div class="compat-table-wrapper" style="max-width:950px; margin:0 auto;">
+          <table class="compat-table">
+            <thead>
+              <tr>
+                <th>Patient (Recipient)</th>
+                <th>Compatible Donor Types (Red Blood Cells)</th>
+                <th>Clinical Transfusion Category</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="table-blood">O-</span></td>
+                <td><span class="compat-tag">O-</span></td>
+                <td><strong class="text-highlight">Universal Red Cell Donor:</strong> Can donate to ANY human blood group</td>
+              </tr>
+              <tr>
+                <td><span class="table-blood">O+</span></td>
+                <td><span class="compat-tag">O+</span> <span class="compat-tag">O-</span></td>
+                <td>One of the most prevalent blood groups in Pakistan</td>
+              </tr>
+              <tr>
+                <td><span class="table-blood">A-</span></td>
+                <td><span class="compat-tag">A-</span> <span class="compat-tag">O-</span></td>
+                <td>Can receive from negative Rh types (A- and O-)</td>
+              </tr>
+              <tr>
+                <td><span class="table-blood">A+</span></td>
+                <td><span class="compat-tag">A+</span> <span class="compat-tag">A-</span> <span class="compat-tag">O+</span> <span class="compat-tag">O-</span></td>
+                <td>Can receive from A and O donors</td>
+              </tr>
+              <tr>
+                <td><span class="table-blood">B-</span></td>
+                <td><span class="compat-tag">B-</span> <span class="compat-tag">O-</span></td>
+                <td>Can receive B- and O-</td>
+              </tr>
+              <tr>
+                <td><span class="table-blood">B+</span></td>
+                <td><span class="compat-tag">B+</span> <span class="compat-tag">B-</span> <span class="compat-tag">O+</span> <span class="compat-tag">O-</span></td>
+                <td>High prevalence in Punjab and throughout Pakistan</td>
+              </tr>
+              <tr>
+                <td><span class="table-blood">AB-</span></td>
+                <td><span class="compat-tag">AB-</span> <span class="compat-tag">A-</span> <span class="compat-tag">B-</span> <span class="compat-tag">O-</span></td>
+                <td>Can receive any Rh-negative red blood cells</td>
+              </tr>
+              <tr>
+                <td><span class="table-blood">AB+</span></td>
+                <td><span class="compat-tag">AB+</span> <span class="compat-tag">AB-</span> <span class="compat-tag">A+</span> <span class="compat-tag">A-</span> <span class="compat-tag">B+</span> <span class="compat-tag">B-</span> <span class="compat-tag">O+</span> <span class="compat-tag">O-</span></td>
+                <td><strong class="text-green">Universal Recipient:</strong> Can receive red blood cells from any group</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <strong>LifeLink AI</strong> · Emergency Blood Matching Platform
+      </div>
+      <div class="footer-right">
+        <span>Hacktoberfest Lahore 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const COMPAT_DATA = {
+      'O-': { receive: ['O-'], give: ['O-', 'O+', 'A-', 'A+', 'B-', 'B+', 'AB-', 'AB+'], note: '🌟 Universal Donor: Red blood cells can be safely given to ANY patient in critical emergency!' },
+      'O+': { receive: ['O+', 'O-'], give: ['O+', 'A+', 'B+', 'AB+'], note: 'Can safely receive from O+ and universal donor O-.' },
+      'A-': { receive: ['A-', 'O-'], give: ['A-', 'A+', 'AB-', 'AB+'], note: 'Can receive from A- and O-.' },
+      'A+': { receive: ['A+', 'A-', 'O+', 'O-'], give: ['A+', 'AB+'], note: 'Can receive from A+, A-, O+, and O-.' },
+      'B-': { receive: ['B-', 'O-'], give: ['B-', 'B+', 'AB-', 'AB+'], note: 'Can receive from B- and O-.' },
+      'B+': { receive: ['B+', 'B-', 'O+', 'O-'], give: ['B+', 'AB+'], note: 'Can receive from B+, B-, O+, and O-.' },
+      'AB-': { receive: ['AB-', 'A-', 'B-', 'O-'], give: ['AB-', 'AB+'], note: 'Can receive from all Rh-negative donors.' },
+      'AB+': { receive: ['AB+', 'AB-', 'A+', 'A-', 'B+', 'B-', 'O+', 'O-'], give: ['AB+'], note: '🌟 Universal Recipient: Can receive red blood cells from ANY blood group!' }
+    };
+
+    function updateCalc(blood) {
+      const data = COMPAT_DATA[blood];
+      if (!data) return;
+
+      const recvEl = document.getElementById('calcCanReceive');
+      recvEl.innerHTML = data.receive.map(b => `<span class="compat-tag" style="font-size:1.1rem; padding:4px 10px;">${b}</span>`).join('');
+
+      const giveEl = document.getElementById('calcCanGive');
+      giveEl.innerHTML = data.give.map(b => `<span class="compat-tag" style="background:#f0fdf4; color:#166534; border-color:#bbf7d0; font-size:1.1rem; padding:4px 10px;">${b}</span>`).join('');
+
+      document.getElementById('calcSpecialNote').textContent = data.note;
+      document.getElementById('calcFindDonorsBtn').href = `/search`;
+    }
+
+    document.getElementById('calcBloodSelect').addEventListener('change', (e) => {
+      updateCalc(e.target.value);
+    });
+
+    updateCalc('O+');
+  </script>
+</body>
+</html>

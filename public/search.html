@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blood Matching | LifeLink</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="/">
+        <span class="logo-icon">🩸</span>
+        <span class="brand-text">LifeLink</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="/" class="nav-item">Home</a>
+        <a href="/search" class="nav-item active">Blood Matching</a>
+        <a href="/donors" class="nav-item">Available Donors</a>
+        <a href="/emergency" class="nav-item">Emergency Alerts</a>
+        <a href="/register-donor" class="nav-item">Become a Donor</a>
+        <a href="/compatibility" class="nav-item">Blood Chart</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="engine-badge" title="Matching Status">
+          <span class="pulse-dot"></span>
+          <span id="engineLabel">Matcher Active</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding:40px 24px 70px;">
+    <div class="section-container" style="max-width:850px;">
+      
+      <!-- Section Header -->
+      <div class="section-header text-center">
+        <span class="section-badge">INTELLIGENT MATCHING</span>
+        <h2>Blood Matching</h2>
+        <p>Enter your patient's required blood type and hospital location. The system analyzes the request and prepares compatible volunteer donors.</p>
+      </div>
+
+      <!-- Matching Card -->
+      <div class="ai-box-card" style="box-shadow:var(--shadow-lg);">
+        <form id="bloodMatchForm">
+          <label for="matchRequest" class="ai-input-label">
+            <span>Describe patient's blood requirement:</span>
+            <span class="hint">English & Roman Urdu supported</span>
+          </label>
+          <div class="ai-input-wrapper">
+            <input
+              id="matchRequest"
+              type="text"
+              required
+              maxlength="500"
+              placeholder="e.g. Need urgent O-positive blood donor in Lahore"
+              autocomplete="off"
+            />
+            <button id="matchSubmitBtn" type="submit" class="btn btn-primary ai-submit-btn">
+              <span>Match Donors</span>
+            </button>
+          </div>
+        </form>
+
+        <!-- Quick Suggestion Prompts -->
+        <div class="quick-prompts">
+          <span class="prompts-label">Quick Suggestions (Click to test):</span>
+          <div class="chips-container">
+            <button type="button" class="prompt-chip" data-prompt="Need O+ blood donor in Lahore urgently">
+              🩸 Need O+ in Lahore
+            </button>
+            <button type="button" class="prompt-chip" data-prompt="Need B- donor urgently in Mayo Hospital Lahore">
+              🩸 Urgent B- at Mayo Hospital
+            </button>
+            <button type="button" class="prompt-chip" data-prompt="Emergency: 2 units of A+ at Services Hospital Lahore">
+              🏥 Urgent A+ at Services Hospital
+            </button>
+            <button type="button" class="prompt-chip" data-prompt="Universal donor O- required in Islamabad">
+              🩸 O- Universal Donor in Islamabad
+            </button>
+            <button type="button" class="prompt-chip" data-prompt="Need AB+ donor in Karachi near Clifton">
+              🩸 AB+ in Karachi
+            </button>
+          </div>
+        </div>
+
+        <!-- Processing Status Message -->
+        <div id="matchStatusMsg" class="ai-status-msg hidden"></div>
+
+        <!-- Match Result Analysis Card -->
+        <div id="matchResultCard" class="ai-parsed-card hidden" style="margin-top:28px; background:#fff; border:2px solid var(--primary-border);">
+          <div class="parsed-header">
+            <span class="parsed-title" style="font-size:1.05rem;">✅ Blood Matching Analysis</span>
+            <span id="matchEngineBadge" class="model-badge">Engine: LLaMA 3.1 8B</span>
+          </div>
+
+          <div class="parsed-grid">
+            <div class="parsed-item">
+              <span class="label">Patient Blood Group:</span>
+              <strong id="resBlood" class="value blood-val">—</strong>
+            </div>
+            <div class="parsed-item">
+              <span class="label">City / Location:</span>
+              <strong id="resCity" class="value">—</strong>
+            </div>
+            <div class="parsed-item">
+              <span class="label">Urgency Level:</span>
+              <strong id="resUrgency" class="value">—</strong>
+            </div>
+            <div class="parsed-item">
+              <span class="label">Hospital / Ward:</span>
+              <strong id="resHospital" class="value">—</strong>
+            </div>
+          </div>
+
+          <div id="resCompatBox" class="compat-notice" style="margin-top:16px;">
+            <span>🩺 <strong>Clinical Compatibility:</strong> <span id="resCompatText"></span></span>
+          </div>
+
+          <!-- Matched Count & Action Button to View Matched Donors Page -->
+          <div style="margin-top:24px; padding:20px; background:#f8fafc; border-radius:var(--radius-md); border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+            <div>
+              <strong id="matchedDonorsHeadline" style="font-size:1.15rem; color:var(--ink); display:block;">
+                Matching Donors Ready
+              </strong>
+              <p style="font-size:0.86rem; color:var(--ink-secondary); margin-top:2px;">
+                Click below to view the verified donor list with direct Phone and WhatsApp contact.
+              </p>
+            </div>
+            <div>
+              <a id="viewMatchedDonorsBtn" href="/donors" class="btn btn-primary btn-lg" style="box-shadow:var(--shadow-glow);">
+                <span>👉 View Matched Donors &rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <strong>LifeLink</strong> · Emergency Blood Matching Platform
+      </div>
+      <div class="footer-right">
+        <span>Hacktoberfest Lahore 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="/js/blood-matching.js"></script>
+</body>
+</html>
